@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merchant Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Nav -->
+      <div class="nav container">
+        <img src="/SVG/logoipsum-288.svg" class="logo" />
+      </div>
+    </header>
+    <!-- Merchant Section -->
+    <section class="merchant container">
+      <h2 class="section-title">Add New Product</h2>
+      <form id="product-form">
+        <div class="form-group">
+          <label for="product-title">Product Title:</label>
+          <input type="text" id="product-title" required />
+        </div>
+        <div class="form-group">
+          <label for="product-price">Product Price ($):</label>
+          <input type="number" id="product-price" step="0.01" required />
+        </div>
+        <div class="form-group">
+          <label for="product-quantity">Product Quantity:</label>
+          <input type="number" id="product-quantity" required />
+        </div>
+        <div class="form-group">
+          <label for="product-img">Product Image URL:</label>
+          <input type="url" id="product-img" required />
+        </div>
+        <button type="submit" class="btn-add">Add Product</button>
+      </form>
+    </section>
+    <!-- Shop -->
+    <section class="shop container">
+      <h2 class="section-title">Shop Products</h2>
+      <!-- Content -->
+      <div class="shop-content" id="shop-content">
+        <!-- Products will be added here -->
+      </div>
+    </section>
+
+    <script src="index.js"></script>
+  </body>
+</html>

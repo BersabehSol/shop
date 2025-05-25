@@ -1,0 +1,657 @@
+@import url("https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap");
+
+:root {
+  --primary: #00756a;
+  --secondary: #373656;
+}
+
+*,
+*,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  font-family: "Radio Canada Big";
+  position: relative;
+}
+/*HEADER*/
+header {
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #4d9f97;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+/*HEADER TITLE*/
+header .header-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+header .header-title img {
+  width: 150px;
+  height: 150px;
+  margin-left: 4rem;
+}
+
+header .header-title .header-menu ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  list-style: none;
+}
+
+header .header-title .header-menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+header .header-title .header-menu ul li.sub .drop-down {
+  display: none;
+}
+
+header .header-title .header-menu li.sub:hover > .drop-down {
+  display: flex;
+  width: 100vw;
+  height: 330px;
+  margin-top: 29px;
+  position: absolute;
+  left: 0;
+  z-index: 99;
+  transition: all 0.3s;
+  border: 1px solid gainsboro;
+  background-color: white;
+}
+
+header .header-menu ul li .drop-down img {
+  width: 350px;
+  height: 350px;
+  margin-left: 0px;
+}
+
+header .header-menu ul li .drop-down ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 20px 10px 20px 10px;
+  margin-inline: auto;
+  font-weight: bold;
+}
+
+header .header-menu ul li .drop-down ul li ul {
+  position: relative;
+  transition: all 0.3s;
+}
+
+header .header-menu ul li .drop-down ul li.Fashion ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 150px;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+header .header-menu ul li .drop-down ul li.Gadgets ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 150px;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+header .header-menu ul li .drop-down ul li.shoes ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 150px;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+header .header-menu ul li .drop-down ul li.Fashion ul li,
+header .header-menu ul li .drop-down ul li.Gadgets ul li,
+header .header-menu ul li .drop-down ul li.shoes ul li {
+  padding: 10px 0;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+header .header-title .header-menu li:hover a {
+  border-bottom: 3px solid whitesmoke;
+  padding-bottom: 26px;
+  transition: all 0.3s;
+}
+/*HEADER-BUTTONS */
+header .header-buttons {
+  margin-right: 60px;
+  display: flex;
+}
+
+header .header-buttons button {
+  font-size: 16px;
+  height: auto;
+  min-height: 13px;
+  padding: 13px 20px;
+  border-radius: 5px;
+  margin-inline: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+header .header-buttons #open-btn {
+  background-color: transparent;
+  border: 1px solid whitesmoke;
+  color: whitesmoke;
+  transition: 0.5s;
+}
+
+header .header-buttons #open-btn:hover {
+  background: #fff;
+  color: var(--primary);
+}
+
+#close-btn {
+  cursor: pointer;
+  margin: 0 0 0 310px;
+  font-size: 3rem;
+  color: #ff0000;
+}
+
+header .header-buttons .sign-up {
+  background-color: hsla(0, 0%, 50%, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.sign-up .container {
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  border-radius: 15px;
+  padding-inline: 20px;
+  text-align: center;
+}
+
+.sign-up .container h2 {
+  margin-bottom: 10px;
+}
+
+.sign-up .container .form-item {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 25px 0;
+  animation: form-item 0.4s;
+}
+
+.sign-up .container .form-item input {
+  width: 300px;
+  height: 40px;
+  font-size: 1rem;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  padding: 0 15px;
+  margin: 15px 0;
+}
+
+.sign-up .container .form-item label:focus {
+  border: 2px dashed rebeccapurple;
+}
+
+.sign-up .container .form-item #label-password {
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: 95px;
+  left: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #fff;
+  padding: 0 3px;
+  color: #999;
+  transition: all 0.3s ease;
+}
+.sign-up .container .form-item #label-text {
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: 25px;
+  left: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #fff;
+  padding: 0 3px;
+  color: #999;
+  transition: all 0.3s ease;
+}
+
+.sign-up .container .form-item input:focus + #label-text,
+.sign-up .container .form-item input:valid + #label-text {
+  font-size: 11px;
+  top: 10px;
+}
+
+.sign-up .container .form-item input:focus + #label-password,
+.sign-up .container .form-item input:valid + #label-password {
+  font-size: 11px;
+  top: 80px;
+}
+
+.sign-up .container .form-item input:focus + label {
+  color: rebeccapurple;
+}
+
+.sign-up .container .form-item #submit {
+  width: 150px;
+  height: 50px;
+  font-size: 1.3rem;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  transition: 0.5s;
+}
+
+.sign-up .container .form-item #submit:hover {
+  background: #4d9f97;
+  color: #fff;
+}
+
+.sign-up .container .form-item #submit:active {
+  background: white;
+  color: dodgerblue;
+}
+
+header .header-buttons .profile {
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: whitesmoke;
+  font-size: 1.1rem;
+  height: auto;
+  min-height: 13px;
+  padding: 13px 0;
+  border-radius: 5px;
+  margin-inline: 10px;
+  font-weight: 300;
+}
+
+header .header-buttons .profile .log-out {
+  display: inline-block;
+}
+header .header-buttons .profile .log-out button {
+  color: var(--primary);
+  background-color: #f9f9f9;
+  border: 1px solid #f9f9f9;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-left: 20px;
+}
+
+.container p {
+  position: absolute;
+  bottom: 10px;
+  left: 90px;
+}
+
+.container p a {
+  text-decoration: none;
+  color: #252525;
+}
+
+.container p span {
+  color: dodgerblue;
+}
+/*MAIN*/
+main {
+  background-color: var(--primary);
+  height: 80vh;
+  position: relative;
+}
+
+main .main-desc {
+  color: whitesmoke;
+  margin-top: 80px;
+}
+
+main .main-desc-title {
+  width: 60vh;
+  position: relative;
+  top: 100px;
+  left: 150px;
+  margin-bottom: 20px;
+}
+
+main .main-desc-title > h2 {
+  color: #ffe6ae;
+  font-weight: 900;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  opacity: 1;
+  transition: opacity 0.3s;
+  animation: main-title-h2 1s linear;
+}
+
+main .main-desc-title > h1 {
+  font-weight: bold;
+  font-size: 46px;
+  margin-bottom: 30px;
+  opacity: 1;
+  transition: opacity 0.3s;
+  animation: main-title-h1 1s linear backwards;
+}
+
+main .main-desc-title > h3 {
+  font-weight: 100;
+  font-size: 1.5rem;
+  animation: main-title-h3 3s ease-in-out backwards;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+main .main-desc-img img {
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  top: -130px;
+  right: 50px;
+}
+/*SECTION---REFERRAL LINK 1*/
+section {
+  height: 100vh;
+}
+
+section .referral-link {
+  width: 70vw;
+  text-align: center;
+  font-size: 1.6rem;
+  color: #171717;
+  margin: 250px 0 -250px 200px;
+}
+
+section .referral-link h4,
+h3 {
+  margin-bottom: 20px;
+  opacity: 1;
+  transition: opacity 0.3s;
+  animation: referral-link 1s 2s ease-in-out backwards;
+}
+
+section .referral-link h4 {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+section .referral-link .referral-link-button {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: var(--primary);
+  border: none;
+}
+
+section .referral-link a .referral-link-button {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+section .referral-link img {
+  width: 1000px;
+  height: 500px;
+  position: relative;
+  bottom: 400px;
+  z-index: -99;
+}
+/*SECTION-CONTENT*/
+.section-content {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  text-align: center;
+}
+.section-content > .row-cards1,
+.row-cards2 {
+  width: 60rem;
+  margin: 30px 0 0 285px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10rem;
+  text-align: center;
+}
+
+.section-content .card2,
+.card3,
+.card4,
+.card5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.card1,
+.card6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  img {
+    width: 70px;
+    height: 70px;
+  }
+}
+/* .card6 {
+  padding: 30px 0;
+  img {
+    width: 70px;
+    height: 70px;
+  }
+} */
+/*SECTION REVIEW*/
+
+/* Styles for the section containing the review */
+.section-review {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 100px;
+}
+
+.review-img img {
+  width: 500px;
+  height: 500px;
+  position: sticky;
+  top: 100px;
+  left: 70px;
+  opacity: 1;
+  transition: opacity 0.3s;
+  animation: review-img 5s linear backwards;
+}
+/* Styles for each individual card in the review */
+.review .card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 50px 20px 20px 50px;
+}
+/* Styles for the stars in each card */
+.review img {
+  width: 20px;
+  height: 20px;
+  fill: yellow; /* Example: Change the fill color of stars */
+}
+/* Styles for the review text in each card */
+.review p {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+/*FOOTER*/
+footer {
+  margin-top: 135rem;
+  background-color: var(--secondary);
+  color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+footer a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.footer-legal {
+  padding: 50px 50px 10px 120px;
+}
+
+.footer-legal p {
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+.footer-legal span {
+  color: grey;
+}
+
+.footer-lists p {
+  color: grey;
+}
+
+.footer-lists > ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  margin-left: 5px;
+  padding: 20px;
+}
+
+.footer-lists ul li {
+  padding-top: 20px;
+}
+
+.footer-lists ul li ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-lists ul #logo #b1 {
+  color: var(--primary);
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.footer-lists ul #logo #b2 {
+  color: whitesmoke;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: var(--primary);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/*ANIMATION*/
+@keyframes main-title-h1 {
+  from {
+    opacity: 0; /* Start with opacity 0 */
+    transform: translateY(20px); /* Start position below */
+  }
+  to {
+    opacity: 1; /* Show with full opacity */
+    transform: translateY(0); /* Move to final position */
+  }
+}
+
+/* Modified keyframes for h3 */
+@keyframes main-title-h3 {
+  from {
+    opacity: 0; /* Start with opacity 0 */
+    transform: translateY(20px); /* Start position below */
+  }
+  to {
+    opacity: 1; /* Show with full opacity */
+    transform: translateY(0); /* Move to final position */
+  }
+}
+/* Modified keyframes for h2 */
+@keyframes main-title-h2 {
+  from {
+    opacity: 0; /* Start with opacity 0 */
+  }
+  to {
+    opacity: 1; /* Show with full opacity */
+  }
+}
+/* Modified keyframes for h2 */
+@keyframes referral-link {
+  from {
+    opacity: 0; /* Start with opacity 0 */
+    transform: translateY(20px); /* Start position below */
+  }
+  to {
+    opacity: 1; /* Show with full opacity */
+    transform: translateY(0); /* Move to final position */
+  }
+}
+/* Modified keyframes for h2 */
+@keyframes review-img {
+  from {
+    opacity: 0; /* Start with opacity 0 */
+    transform: translateY(20px); /* Start position below */
+  }
+  to {
+    opacity: 1; /* Show with full opacity */
+    transform: translateY(0); /* Move to final position */
+  }
+}
